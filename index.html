@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alg URL 转换工具</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Alg URL 转换工具</h1>
+
+    <label>
+      p：
+      <select id="pColor">
+        <option value="白">白</option>
+        <option value="黄">黄</option>
+        <option value="绿">绿</option>
+        <option value="蓝" selected>蓝</option>
+        <option value="橙">橙</option>
+        <option value="红">红</option>
+      </select>
+    </label>
+
+    <label>
+      q：
+      <select id="qColor">
+        <option value="白" selected>白</option>
+        <option value="黄">黄</option>
+        <option value="绿">绿</option>
+        <option value="蓝">蓝</option>
+        <option value="橙">橙</option>
+        <option value="红">红</option>
+      </select>
+    </label>
+
+    <label>
+      alg.cubing.net 链接：
+      <textarea id="urlInput" rows="7" placeholder="粘贴 alg.cubing.net 链接"></textarea>
+    </label>
+
+    <button id="runButton">执行</button>
+
+    <section id="resultSection" class="hidden">
+      <h2>输出链接</h2>
+      <textarea id="urlOutput" rows="7" readonly></textarea>
+
+      <div class="buttons">
+        <button id="copyButton">复制链接</button>
+        <button id="openButton">打开链接</button>
+      </div>
+    </section>
+
+    <p id="message"></p>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
