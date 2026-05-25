@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>解法复盘-桥式颜色转换工具</title>
+  <title>桥式复盘-桥色转换工具</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <main class="container">
-    <h1> 解法复盘-桥式颜色转换工具</h1>
+    <h1> 桥式复盘-桥色转换工具</h1>
     <div class="image-wrapper">
       <img
         id="bridgeImage"
@@ -47,10 +47,9 @@
       <textarea id="urlInput" rows="7" placeholder="粘贴复盘链接。示例：https://alg.cubing.net/?setup=D-_F-_L2_D2_F2_B_R2_F2_U2_R2_F_U2_L2_D2_F-_L2_U2&alg=y_x-_%2F%2F_inspection%0Ar_B2_R_%2F%2F_F2B%0AU_M_U2_M2-_U2_M-_%2F%2F_EP"></textarea>
     </label>
 
-    <button id="runButton">执行</button>
+    <button id="runButton">获取新链接</button>
 
     <section id="resultSection" class="hidden">
-      新链接：
       <textarea id="urlOutput" rows="7" readonly></textarea>
 
       <div class="buttons">
@@ -72,6 +71,8 @@
     
       <p class="hint">
         点击复制链接后，在浏览器收藏夹中新建书签，编辑书签网址为复制的内容。
+      </p>
+      <p class="hint">
         之后打开 alg.cubing.net 页面，再点击该书签，即可直接转换为指定的桥色。
       </p>
     
