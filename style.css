@@ -104,3 +104,19 @@ button:hover {
   padding-top: 20px;
   border-top: 1px solid #ddd;
 }
+
+.image-wrapper {
+  text-align: center;
+  margin: 18px 0 22px;
+}
+
+.top-image {
+  max-width: min(100%, 360px);
+  height: auto;
+  display: inline-block;
+  transition: opacity 0.25s ease;
+}
+
+.top-image.fade-out {
+  opacity: 0;
+}
