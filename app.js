@@ -68,3 +68,24 @@ if (copyBookmarkletButton) {
     }
   });
 }
+
+const bridgeImage = document.getElementById("bridgeImage");
+
+if (bridgeImage) {
+  const bridgeImages = [
+    "./image/image1.png",
+    "./image/image2.png",
+  ];
+
+  let bridgeImageIndex = 0;
+
+  setInterval(() => {
+    bridgeImage.classList.add("fade-out");
+
+    setTimeout(() => {
+      bridgeImageIndex = (bridgeImageIndex + 1) % bridgeImages.length;
+      bridgeImage.src = bridgeImages[bridgeImageIndex];
+      bridgeImage.classList.remove("fade-out");
+    }, 250);
+  }, 2000);
+}
