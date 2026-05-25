@@ -9,10 +9,18 @@
 <body>
   <main class="container">
     <h1> 解法复盘-桥式颜色转换工具</h1>
-
+    <h2>在线转换</h2>
+    <div class="image-wrapper">
+      <img
+        id="bridgeImage"
+        src="./image/image1.png"
+        alt="FBswitcher 示意图"
+        class="top-image"
+      />
+    </div>
     <label>
       左桥色：
-      <select id="pColor">
+      <select id="FBColor">
         <option value="白">白</option>
         <option value="黄">黄</option>
         <option value="绿">绿</option>
@@ -24,7 +32,7 @@
 
     <label>
       桥底色：
-      <select id="qColor">
+      <select id="DColor">
         <option value="白" selected>白</option>
         <option value="黄">黄</option>
         <option value="绿">绿</option>
@@ -63,13 +71,10 @@
       </button>
     
       <p class="hint">
-        点击复制链接后，在浏览器中新建书签，将书签网址粘贴为复制到的内容，保存即可。
-        之后打开 alg.cubing.net 页面，再点击该书签,即可直接转换为指定的桥色。
+        点击复制链接后，在浏览器收藏夹中新建书签，编辑书签网址为复制的内容。
+        之后打开 alg.cubing.net 页面，再点击该书签，即可直接转换为指定的桥色。
       </p>
     
-      <p class="hint">
-        目前建议仅在电脑端使用书签。部分手机浏览器会限制js格式的书签。
-      </p>
     </section>
 
     <p id="message"></p>
