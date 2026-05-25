@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>解法复盘-桥式颜色转换工具</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1> 解法复盘-桥式颜色转换工具</h1>
+
+    <label>
+      左桥色：
+      <select id="pColor">
+        <option value="白">白</option>
+        <option value="黄">黄</option>
+        <option value="绿">绿</option>
+        <option value="蓝" selected>蓝</option>
+        <option value="橙">橙</option>
+        <option value="红">红</option>
+      </select>
+    </label>
+
+    <label>
+      桥底色：
+      <select id="qColor">
+        <option value="白" selected>白</option>
+        <option value="黄">黄</option>
+        <option value="绿">绿</option>
+        <option value="蓝">蓝</option>
+        <option value="橙">橙</option>
+        <option value="红">红</option>
+      </select>
+    </label>
+
+    <label>
+      alg.cubing.net 链接：
+      <textarea id="urlInput" rows="7" placeholder="粘贴 alg.cubing.net 链接。示例：https://alg.cubing.net/?setup=D-_F-_L2_D2_F2_B_R2_F2_U2_R2_F_U2_L2_D2_F-_L2_U2&alg=y_x-_%2F%2F_inspection%0Ar_B2_R_%2F%2F_F2B%0AU_M_U2_M2-_U2_M-_%2F%2F_EP"></textarea>
+    </label>
+
+    <button id="runButton">执行</button>
+
+    <section id="resultSection" class="hidden">
+      <h2>输出链接</h2>
+      <textarea id="urlOutput" rows="7" readonly></textarea>
+
+      <div class="buttons">
+        <button id="copyButton">复制链接</button>
+        <button id="openButton">打开链接</button>
+      </div>
+    </section>
+
+    <section class="bookmarklet-section">
+      <h2>保存为书签</h2>
+      <p>
+        可将以下链接保存为浏览器书签。在 alg.cubing.net 页面点击该书签，即可直接进行转换。
+      </p>
+
+      <a class="bookmarklet"
+        href='javascript:(async function(){const solverUrl="https://aqua-water.github.io/FBswitcher/solver.js";function loadScript(src){return new Promise((resolve,reject)=>{if(window.FBSwitcher&&window.FBSwitcher.solveUrl){resolve();return;}const script=document.createElement("script");script.src=src+"?t="+Date.now();script.onload=resolve;script.onerror=reject;document.body.appendChild(script);});}function normalizeColor(input){const value=String(input||"").trim();const colorMap={"白":"白","黄":"黄","绿":"绿","蓝":"蓝","橙":"橙","红":"红",white:"白",yellow:"黄",green:"绿",blue:"蓝",orange:"橙",red:"红",w:"白",y:"黄",g:"绿",b:"蓝",o:"橙",r:"红"};const lower=value.toLowerCase();if(value in colorMap)return colorMap[value];if(lower in colorMap)return colorMap[lower];return null;}try{const currentUrl=location.href;if(!currentUrl.startsWith("https://alg.cubing.net/")&&!currentUrl.startsWith("http://alg.cubing.net/")){alert("请先在 alg.cubing.net 页面中使用此书签。");return;}const leftBridgeInput=prompt("请输入左桥色：\n可输入：白、黄、绿、蓝、橙、红","蓝");if(leftBridgeInput===null)return;const bottomBridgeInput=prompt("请输入桥底色：\n可输入：白、黄、绿、蓝、橙、红","白");if(bottomBridgeInput===null)return;const pColor=normalizeColor(leftBridgeInput);const qColor=normalizeColor(bottomBridgeInput);if(!pColor||!qColor){alert("颜色输入无效。请使用：白、黄、绿、蓝、橙、红。");return;}await loadScript(solverUrl);const newUrl=window.FBSwitcher.solveUrl(pColor,qColor,currentUrl);if(!newUrl){alert("当前输入无法转换到目标状态。");return;}location.href=newUrl;}catch(error){alert("FBswitcher 执行失败：\n"+error.message);}})();'>
+        FBswitcher
+      </a>
+
+      <p class="hint">
+        电脑端可将上方链接拖到书签栏。手机端可先新建任意书签，再编辑书签地址为以上链接。
+      </p>
+    </section>
+
+    <p id="message"></p>
+  </main>
+
+  <script src="./solver.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
